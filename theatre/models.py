@@ -40,21 +40,14 @@ class Play(models.Model):
         blank=True,
         related_name="plays",
     )
-    rating = models.DecimalField(
-        max_digits=3,
-        decimal_places=1,
-        blank=True,
-        null=True,
-    )
     image = models.ImageField(upload_to=play_image_upload_path, blank=True, null=True)
 
     def __str__(self):
         return f"{self.title} ({self.rating})"
 
-    def update_rating(self):
-        avg_rating = self.reviews.aggregate(avg=Avg("rating"))["avg"]
-        self.rating = avg_rating if avg_rating else 0
-        self.save()
+    @property
+    def rating(self):
+        return round(self.reviews.aggregate(avg=Avg("rating"))["avg"] or 0, 2)
 
 
 class TheatreHall(models.Model):
@@ -149,7 +142,3 @@ class Review(models.Model):
 
     def __str__(self):
         return f"Review by {self.user} for {self.play.title}: ({self.rating})"
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        self.play.update_rating()
