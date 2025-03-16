@@ -1,0 +1,283 @@
+[
+  {
+    "model": "theatre.actor",
+    "pk": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Smith"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 2,
+    "fields": {
+      "first_name": "Emma",
+      "last_name": "Johnson"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 3,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Brown"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 4,
+    "fields": {
+      "first_name": "Olivia",
+      "last_name": "Davis"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 5,
+    "fields": {
+      "first_name": "William",
+      "last_name": "Miller"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 6,
+    "fields": {
+      "first_name": "Toto",
+      "last_name": "Marzaghlli"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 7,
+    "fields": {
+      "first_name": "Mico",
+      "last_name": "Guerrero"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 8,
+    "fields": {
+      "first_name": "Palia",
+      "last_name": "Modci"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 9,
+    "fields": {
+      "first_name": "Pablo",
+      "last_name": "Estromio"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 10,
+    "fields": {
+      "first_name": "Phillipe",
+      "last_name": "Simpsono"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 11,
+    "fields": {
+      "first_name": "Camara",
+      "last_name": "Stone"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 12,
+    "fields": {
+      "first_name": "Betty",
+      "last_name": "Cornhill"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 13,
+    "fields": {
+      "first_name": "Lesya",
+      "last_name": "Rudnytska"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 14,
+    "fields": {
+      "first_name": "Ostap",
+      "last_name": "Veres"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 15,
+    "fields": {
+      "first_name": "Poji",
+      "last_name": "Moyia"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 16,
+    "fields": {
+      "first_name": "Ozzy",
+      "last_name": "Osbourne"
+    }
+  },
+  {
+    "model": "theatre.actor",
+    "pk": 17,
+    "fields": {
+      "first_name": "Iosyp",
+      "last_name": "Shmidt"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 1,
+    "fields": {
+      "name": "Tragedy"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 2,
+    "fields": {
+      "name": "Comedy"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 3,
+    "fields": {
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 4,
+    "fields": {
+      "name": "Melodrama"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 5,
+    "fields": {
+      "name": "Farce"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 6,
+    "fields": {
+      "name": "Satire"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 7,
+    "fields": {
+      "name": "Musical"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 8,
+    "fields": {
+      "name": "Opera"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 9,
+    "fields": {
+      "name": "Tragicomedy"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 10,
+    "fields": {
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 11,
+    "fields": {
+      "name": "Absurdism"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 12,
+    "fields": {
+      "name": "One-Act Play"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 13,
+    "fields": {
+      "name": "Historical"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 14,
+    "fields": {
+      "name": "Action"
+    }
+  },
+  {
+    "model": "theatre.genre",
+    "pk": 15,
+    "fields": {
+      "name": "Thriller"
+    }
+  },
+  {
+    "model": "theatre.play",
+    "pk": 1,
+    "fields": {
+      "title": "Hamlet",
+      "description": "A tragedy by William Shakespeare. The ghost of the King of Denmark tells his son Hamlet to avenge his murder by killing the new king, Hamlet's uncle. Hamlet feigns madness, contemplates life and death, and seeks revenge. His uncle, fearing for his life, also devises plots to kill Hamlet.",
+      "image": "plays/uploaded-hamlet.jpeg",
+      "actors": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "genres": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "theatre.play",
+    "pk": 2,
+    "fields": {
+      "title": "The Phantom of the Opera",
+      "description": "A musical about a masked figure haunting an opera house",
+      "image": "",
+      "actors": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "genres": [
+        3,
+        7,
+        8
+      ]
+    }
+  }
+]
