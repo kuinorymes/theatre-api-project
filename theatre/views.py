@@ -27,7 +27,6 @@ from theatre.serializers import (
     ReservationDetailSerializer,
     PlayImageSerializer,
 )
-from theatre.permissions import IsAdminOrIfAuthenticatedReadOnly
 
 
 @extend_schema(
@@ -39,7 +38,6 @@ class PlayImageUpdateView(UpdateAPIView):
     queryset = Play.objects.all()
     parser_classes = [MultiPartParser, FormParser]
     serializer_class = PlayImageSerializer
-    permission_classes = [permissions.AllowAny]
 
     def get_object(self):
         return get_object_or_404(Play, pk=self.kwargs["pk"])
@@ -55,7 +53,6 @@ class PlayImageUpdateView(UpdateAPIView):
 )
 class PlayListView(generics.ListCreateAPIView):
     queryset = Play.objects.prefetch_related("genres", "actors")
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
     def get_serializer_class(self):
         if self.request.method == "GET":
@@ -86,7 +83,6 @@ class PlayListView(generics.ListCreateAPIView):
 )
 class PlayDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Play.objects.prefetch_related("genres", "actors", "reviews")
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
     serializer_class = PlayDetailSerializer
 
 
@@ -98,7 +94,6 @@ class PlayDetailView(generics.RetrieveUpdateDestroyAPIView):
 class ActorListView(generics.ListCreateAPIView):
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
 
 @extend_schema(
@@ -109,7 +104,6 @@ class ActorListView(generics.ListCreateAPIView):
 class ActorDetailView(generics.RetrieveDestroyAPIView):
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
 
 @extend_schema(
@@ -120,7 +114,6 @@ class ActorDetailView(generics.RetrieveDestroyAPIView):
 class GenreListView(generics.ListCreateAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
 
 @extend_schema(
@@ -131,7 +124,6 @@ class GenreListView(generics.ListCreateAPIView):
 class GenreDetailView(generics.RetrieveDestroyAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
 
 @extend_schema(
@@ -145,7 +137,6 @@ class PerformanceListView(generics.ListAPIView):
     ).prefetch_related("play__genres")
 
     serializer_class = PerformanceSerializer
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
     def get_queryset(self):
         queryset = self.queryset
@@ -220,7 +211,6 @@ class ReservationDetailView(generics.RetrieveDestroyAPIView):
 class TheatreHallListView(generics.ListCreateAPIView):
     queryset = TheatreHall.objects.all()
     serializer_class = TheatreHallSerializer
-    permission_classes = [IsAdminOrIfAuthenticatedReadOnly]
 
     def get_queryset(self):
         queryset = self.queryset
